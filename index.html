@@ -7,124 +7,139 @@
 
 <style>
 :root{
-  --bg:#eef1f4;
+  --bg:#e9edf2;
   --card:#ffffff;
-  --border:#cfd6de;
-  --primary:#0b4f8a;
-  --primary-dark:#083c69;
-  --text:#0f172a;
-  --muted:#6b7280;
+  --border:#d0d7e2;
+  --primary:#0a4fa3;
+  --primary-dark:#07366f;
+  --text:#0b1220;
+  --muted:#5b6472;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:Inter, "Segoe UI", Arial, sans-serif;
+  font-family:"Segoe UI Variable","Segoe UI",Inter,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
+  font-size:16px;
+  line-height:1.5;
 }
 
-a{color:var(--primary);text-decoration:none}
+a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:500;
+}
 a:hover{text-decoration:underline}
 
-/* Header */
+/* HEADER */
 .header{
   background:#fff;
-  border-bottom:1px solid var(--border);
+  box-shadow:0 4px 16px rgba(0,0,0,.08);
 }
 .header-top{
-  max-width:1200px;
+  max-width:1280px;
   margin:0 auto;
-  padding:10px 20px;
+  padding:14px 28px;
   display:flex;
   justify-content:space-between;
-  font-size:13px;
-}
-.nav{
-  max-width:1200px;
-  margin:0 auto;
-  padding:12px 20px;
-  display:flex;
-  gap:22px;
-  font-size:13px;
+  font-size:14px;
   font-weight:600;
 }
-
-/* Layout */
-.main{
-  max-width:1200px;
-  margin:20px auto;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:340px 1fr;
-  gap:20px;
+.nav{
+  max-width:1280px;
+  margin:0 auto;
+  padding:14px 28px 18px;
+  display:flex;
+  gap:26px;
+  font-size:15px;
+  font-weight:700;
 }
 
-/* Cards */
+/* LAYOUT */
+.main{
+  max-width:1280px;
+  margin:28px auto;
+  padding:0 28px;
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:24px;
+}
+
+/* CARDS */
 .card{
   background:var(--card);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:16px;
+  border-radius:14px;
+  padding:22px;
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.08),
+    0 2px 6px rgba(0,0,0,.06);
 }
 
-/* Hero */
+/* HERO */
 .hero img{
   width:100%;
-  border-radius:6px;
+  border-radius:10px;
+  margin-bottom:14px;
 }
 .hero h1{
-  font-size:20px;
-  margin:10px 0 4px;
+  font-size:28px;
+  margin:0 0 6px;
+  font-weight:800;
 }
 .hero p{
   margin:0;
-  font-size:14px;
+  font-size:17px;
   color:var(--primary);
+  font-weight:600;
 }
 
-/* Sections */
+/* SECTION TITLES */
 .section-title{
-  font-size:13px;
-  font-weight:700;
+  font-size:15px;
+  font-weight:800;
   text-transform:uppercase;
-  margin-bottom:10px;
+  margin-bottom:14px;
   color:var(--primary-dark);
+  letter-spacing:.04em;
 }
 
-/* Work */
+/* WORK */
 .work-grid{
   display:grid;
-  grid-template-columns:1.6fr 280px;
-  gap:16px;
+  grid-template-columns:1.6fr 300px;
+  gap:22px;
 }
 .work a{
   display:block;
-  font-size:14px;
-  margin-bottom:6px;
+  font-size:17px;
+  margin-bottom:10px;
 }
 
-/* Calendar */
+/* CALENDAR */
 .calendar{
   background:#f8fafc;
-  border:1px solid var(--border);
-  border-radius:6px;
-  padding:8px;
-  font-size:12px;
+  border-radius:12px;
+  padding:12px;
+  font-size:14px;
+  box-shadow:inset 0 0 0 1px var(--border);
 }
 .calendar-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:6px;
+  margin-bottom:10px;
+  font-weight:700;
 }
 .calendar button{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:4px;
+  border-radius:8px;
   cursor:pointer;
-  padding:2px 6px;
+  padding:4px 10px;
+  font-size:14px;
 }
 .calendar table{
   width:100%;
@@ -132,52 +147,56 @@ a:hover{text-decoration:underline}
 }
 .calendar th,.calendar td{
   border:1px solid var(--border);
-  padding:4px;
+  padding:6px;
   text-align:center;
 }
 .today{
   background:var(--primary);
   color:#fff;
-  font-weight:700;
+  font-weight:800;
 }
 
-/* Media */
+/* MEDIA */
 .media{
-  margin-top:10px;
-  font-size:12px;
+  margin-top:14px;
+  font-size:14px;
 }
 .media-icons{
   display:flex;
-  gap:6px;
-  margin-top:6px;
+  gap:10px;
+  margin-top:8px;
 }
 .media-icon{
-  padding:4px 8px;
-  border:1px solid var(--border);
-  border-radius:4px;
+  padding:6px 14px;
+  border-radius:999px;
   background:#fff;
+  box-shadow:0 2px 6px rgba(0,0,0,.12);
+  font-weight:700;
 }
 
-/* News */
+/* NEWS */
 .news a{
   display:block;
-  font-size:14px;
-  margin-bottom:6px;
+  font-size:17px;
+  margin-bottom:10px;
 }
 
-/* Footer */
+/* FOOTER */
 .footer{
-  max-width:1200px;
-  margin:30px auto 20px;
-  padding:10px 20px;
-  border-top:1px solid var(--border);
+  max-width:1280px;
+  margin:40px auto 24px;
+  padding:18px 28px;
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
   display:flex;
   justify-content:space-between;
-  font-size:12px;
+  font-size:14px;
+  font-weight:600;
   color:var(--muted);
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media(max-width:900px){
   .main{grid-template-columns:1fr}
   .work-grid{grid-template-columns:1fr}
@@ -193,7 +212,7 @@ a:hover{text-decoration:underline}
     <div>
       <a href="#">Prawo</a> ·
       <a href="#">Publikacje</a> ·
-      <a href="#">Dla mediów</a>
+      <a href="#">Media</a>
     </div>
   </div>
   <nav class="nav">
@@ -208,7 +227,7 @@ a:hover{text-decoration:underline}
 <main class="main">
 
   <aside class="card hero">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Sejm_RP.jpg" alt="">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Sejm_RP.jpg">
     <h1>Komunikat</h1>
     <p>Informacje organizacyjne na bieżący tydzień</p>
   </aside>
@@ -268,7 +287,6 @@ a:hover{text-decoration:underline}
 const cal=document.getElementById("cal");
 const m=document.getElementById("month");
 let d=new Date();
-
 function draw(){
   cal.innerHTML="";
   m.textContent=d.toLocaleString("pl",{month:"long",year:"numeric"});
