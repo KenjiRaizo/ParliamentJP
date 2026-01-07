@@ -2,220 +2,228 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>Sejm RP – Strona główna</title>
+<title>Parlament – Strona główna</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+:root{
+  --bg:#eef1f4;
+  --card:#ffffff;
+  --border:#cfd6de;
+  --primary:#0b4f8a;
+  --primary-dark:#083c69;
+  --text:#0f172a;
+  --muted:#6b7280;
+}
+
+*{box-sizing:border-box}
+
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#e6e6e6;
-  color:#000;
+  font-family:Inter, "Segoe UI", Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
-/* linki */
-a{
-  color:#003d7c;
-  text-decoration:none;
-}
-a:hover{
-  text-decoration:underline;
-}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
 
-/* górny pasek */
-.topbar{
-  background:#ffffff;
-  border-bottom:1px solid #bfbfbf;
-  font-size:12px;
-  padding:8px 24px;
-  display:flex;
-  justify-content:space-between;
+/* Header */
+.header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
 }
-
-/* menu */
-.nav{
-  max-width:1200px;
-  margin:8px auto;
-  background:#ffffff;
-  border:1px solid #bfbfbf;
-  padding:6px 12px;
-  display:flex;
-  gap:18px;
-  font-size:12px;
-  font-weight:bold;
-}
-
-/* główny layout */
-.wrapper{
+.header-top{
   max-width:1200px;
   margin:0 auto;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+}
+.nav{
+  max-width:1200px;
+  margin:0 auto;
+  padding:12px 20px;
+  display:flex;
+  gap:22px;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* Layout */
+.main{
+  max-width:1200px;
+  margin:20px auto;
+  padding:0 20px;
   display:grid;
-  grid-template-columns:360px auto;
-  gap:12px;
+  grid-template-columns:340px 1fr;
+  gap:20px;
 }
 
-/* boxy */
-.box{
-  background:#ffffff;
-  border:1px solid #bfbfbf;
-  padding:10px;
+/* Cards */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:16px;
 }
 
-/* komunikat */
+/* Hero */
 .hero img{
   width:100%;
-  border:1px solid #bfbfbf;
+  border-radius:6px;
 }
 .hero h1{
-  font-size:18px;
-  margin:6px 0 2px;
+  font-size:20px;
+  margin:10px 0 4px;
 }
 .hero p{
-  font-size:12px;
-  color:#003d7c;
   margin:0;
+  font-size:14px;
+  color:var(--primary);
 }
 
-/* nagłówki sekcji */
-.title{
-  font-size:12px;
-  font-weight:bold;
-  color:#000;
-  margin-bottom:6px;
-  border-bottom:1px solid #bfbfbf;
-  padding-bottom:3px;
+/* Sections */
+.section-title{
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  margin-bottom:10px;
+  color:var(--primary-dark);
 }
 
-/* prace bieżące */
-.prace-grid{
+/* Work */
+.work-grid{
   display:grid;
-  grid-template-columns:auto 260px;
-  gap:10px;
+  grid-template-columns:1.6fr 280px;
+  gap:16px;
 }
-.prace a{
+.work a{
   display:block;
-  font-size:12px;
-  margin-bottom:3px;
+  font-size:14px;
+  margin-bottom:6px;
 }
 
-/* kalendarz */
+/* Calendar */
 .calendar{
-  background:#f2f2f2;
-  border:1px solid #bfbfbf;
-  font-size:11px;
-  padding:4px;
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:8px;
+  font-size:12px;
 }
 .calendar-header{
   display:flex;
   justify-content:space-between;
-  margin-bottom:4px;
+  align-items:center;
+  margin-bottom:6px;
 }
 .calendar button{
-  background:#ffffff;
-  border:1px solid #bfbfbf;
-  font-size:11px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:4px;
   cursor:pointer;
+  padding:2px 6px;
 }
 .calendar table{
   width:100%;
   border-collapse:collapse;
 }
-.calendar th,
-.calendar td{
-  border:1px solid #bfbfbf;
-  padding:2px;
-}
-.today{
-  background:#003d7c;
-  color:#fff;
-  font-weight:bold;
-}
-
-/* ITV */
-.itv{
-  margin-top:6px;
-  font-size:11px;
+.calendar th,.calendar td{
+  border:1px solid var(--border);
+  padding:4px;
   text-align:center;
 }
-.itv-icons{
-  display:flex;
-  justify-content:center;
-  gap:4px;
-  margin-top:4px;
-}
-.itv-icon{
-  border:1px solid #bfbfbf;
-  background:#e6e6e6;
-  padding:3px 6px;
+.today{
+  background:var(--primary);
+  color:#fff;
+  font-weight:700;
 }
 
-/* aktualności */
+/* Media */
+.media{
+  margin-top:10px;
+  font-size:12px;
+}
+.media-icons{
+  display:flex;
+  gap:6px;
+  margin-top:6px;
+}
+.media-icon{
+  padding:4px 8px;
+  border:1px solid var(--border);
+  border-radius:4px;
+  background:#fff;
+}
+
+/* News */
 .news a{
   display:block;
-  font-size:12px;
-  margin-bottom:4px;
+  font-size:14px;
+  margin-bottom:6px;
 }
 
-/* stopka */
+/* Footer */
 .footer{
   max-width:1200px;
-  margin:16px auto;
-  padding-top:6px;
-  font-size:11px;
-  border-top:1px solid #bfbfbf;
+  margin:30px auto 20px;
+  padding:10px 20px;
+  border-top:1px solid var(--border);
   display:flex;
   justify-content:space-between;
+  font-size:12px;
+  color:var(--muted);
 }
 
-/* mobile */
+/* Responsive */
 @media(max-width:900px){
-  .wrapper{grid-template-columns:1fr}
-  .prace-grid{grid-template-columns:1fr}
+  .main{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr}
 }
 </style>
-  
 </head>
 
 <body>
 
-<div class="topbar">
-  <div>SEJM RP · X kadencja</div>
-  <div>
-    <a href="#">Kancelaria Sejmu</a>
-    <a href="#">Publikacje</a>
-    <a href="#">Prawo</a>
-    <a href="#">ISAP</a>
+<header class="header">
+  <div class="header-top">
+    <div>PARLAMENT · KADENCJA X</div>
+    <div>
+      <a href="#">Prawo</a> ·
+      <a href="#">Publikacje</a> ·
+      <a href="#">Dla mediów</a>
+    </div>
   </div>
-</div>
+  <nav class="nav">
+    <a href="#">Strona główna</a>
+    <a href="#">Prace</a>
+    <a href="#">Posłowie</a>
+    <a href="#">Komisje</a>
+    <a href="#">Archiwum</a>
+  </nav>
+</header>
 
-<div class="nav">
-  <a href="#">Strona główna</a>
-  <a href="#">Prace Sejmu</a>
-  <a href="#">Posłowie</a>
-  <a href="#">Dla mediów</a>
-  <a href="#">O Sejmie</a>
-  <a href="#">Archiwum</a>
-</div>
+<main class="main">
 
-<div class="wrapper">
-
-  <div class="box hero">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Sejm_RP.jpg">
+  <aside class="card hero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Sejm_RP.jpg" alt="">
     <h1>Komunikat</h1>
-    <p>Wnioski o akredytacje prasowe na rok 2026</p>
-  </div>
+    <p>Informacje organizacyjne na bieżący tydzień</p>
+  </aside>
 
-  <div class="box">
-    <div class="title">Prace bieżące</div>
+  <section class="card">
+    <div class="section-title">Prace bieżące</div>
 
-    <div class="prace-grid">
-      <div class="prace">
-        <a href="#">49. posiedzenie Sejmu</a>
+    <div class="work-grid">
+      <div class="work">
+        <a href="#">Posiedzenie plenarne</a>
         <a href="#">Porządek obrad</a>
-        <a href="#">Harmonogram obrad</a>
+        <a href="#">Harmonogram</a>
         <a href="#">Głosowania</a>
-        <a href="#">Prace komisji</a>
-        <a href="#"><strong>Zgromadzenie Narodowe »</strong></a>
+        <a href="#">Komisje</a>
+        <a href="#"><strong>Dokumenty i sprawozdania →</strong></a>
       </div>
 
       <div>
@@ -228,12 +236,12 @@ a:hover{
           <table id="cal"></table>
         </div>
 
-        <div class="itv">
-          <strong>ITV Sejm</strong>
-          <div class="itv-icons">
-            <div class="itv-icon">LIVE</div>
-            <div class="itv-icon">VOD</div>
-            <div class="itv-icon">📡</div>
+        <div class="media">
+          <strong>Transmisje</strong>
+          <div class="media-icons">
+            <div class="media-icon">LIVE</div>
+            <div class="media-icon">VOD</div>
+            <div class="media-icon">AUDIO</div>
           </div>
         </div>
       </div>
@@ -241,19 +249,20 @@ a:hover{
 
     <hr>
 
-    <div class="title">Aktualności</div>
+    <div class="section-title">Aktualności</div>
     <div class="news">
-      <a href="#">08.01.2026 – Konferencja Marszałka Sejmu</a>
-      <a href="#">07.01.2026 – Posiedzenie Komisji Finansów</a>
-      <a href="#">31.12.2025 – Podsumowanie roku</a>
+      <a href="#">Konferencja prasowa przewodniczącego</a>
+      <a href="#">Posiedzenie komisji finansów</a>
+      <a href="#">Podsumowanie tygodnia prac</a>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="footer">
-  <div>Mapa strony · Kontakt · Dostępność</div>
-  <div>System Informacyjny Sejmu</div>
-</div>
+</main>
+
+<footer class="footer">
+  <div>Kontakt · Dostępność · Mapa strony</div>
+  <div>© Parlament</div>
+</footer>
 
 <script>
 const cal=document.getElementById("cal");
@@ -266,16 +275,15 @@ function draw(){
   const y=d.getFullYear(),mo=d.getMonth();
   const fd=new Date(y,mo,1).getDay()||7;
   const days=new Date(y,mo+1,0).getDate();
-
   let r=cal.insertRow();
   ["P","W","Ś","C","P","S","N"].forEach(x=>r.insertCell().innerHTML="<b>"+x+"</b>");
   r=cal.insertRow();
   for(let i=1;i<fd;i++)r.insertCell();
   for(let i=1;i<=days;i++){
-    if(r.cells.length==7)r=cal.insertRow();
+    if(r.cells.length===7)r=cal.insertRow();
     let c=r.insertCell();c.textContent=i;
     let t=new Date();
-    if(i==t.getDate()&&mo==t.getMonth()&&y==t.getFullYear())c.className="today";
+    if(i===t.getDate()&&mo===t.getMonth()&&y===t.getFullYear())c.className="today";
   }
 }
 document.getElementById("prev").onclick=()=>{d.setMonth(d.getMonth()-1);draw()};
