@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Sejm RP – Strona główna</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#f5f5f5;
+  --fg:#111;
+  --border:#cfcfcf;
+  --link:#005ea8;
+  --accent:#005ea8;
+  --box:#fff;
+}
+.dark{
+  --bg:#000;
+  --fg:#eaeaea;
+  --border:#555;
+  --link:#6fd6ff;
+  --accent:#6fd6ff;
+  --box:#000;
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:Arial,Helvetica,sans-serif
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+.topbar{
+  padding:8px 30px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  background:var(--box)
+}
+.topbar button{
+  font-size:12px;
+  border:1px solid var(--border);
+  background:none;
+  cursor:pointer
+}
+.nav{
+  max-width:1200px;
+  margin:10px auto;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:6px 14px;
+  display:flex;
+  gap:20px;
+  text-transform:uppercase;
+  font-size:13px;
+  background:var(--box)
+}
+.wrapper{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.3fr 2.7fr;
+  gap:16px
+}
+.box{
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:12px;
+  background:var(--box)
+}
+.hero img{width:100%;border-radius:3px}
+.hero h1{
+  font-size:20px;
+  margin:6px 0 2px
+}
+.hero p{
+  font-size:13px;
+  margin:0;
+  color:var(--accent)
+}
+.title{
+  font-weight:bold;
+  font-size:13px;
+  margin-bottom:4px;
+  text-transform:uppercase
+}
+.prace-grid{
+  display:grid;
+  grid-template-columns:2fr 1.1fr;
+  gap:10px
+}
+.prace a,
+.news a{
+  display:block;
+  font-size:13px;
+  line-height:1.25;
+  margin-bottom:2px
+}
+.prace a::before{
+  content:"– ";
+  color:var(--accent)
+}
+.calendar{
+  font-size:12px;
+  text-align:center
+}
+.calendar-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:3px
+}
+.calendar button{
+  border:1px solid var(--border);
+  background:none;
+  cursor:pointer;
+  font-size:12px
+}
+.calendar table{
+  width:100%;
+  border-collapse:collapse
+}
+.calendar th,
+.calendar td{
+  border:1px solid var(--border);
+  padding:2px
+}
+.today{
+  background:var(--accent);
+  color:#fff;
+  font-weight:bold
+}
+.itv{
+  margin-top:4px;
+  text-align:center;
+  font-size:12px
+}
+.itv-icons{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin-top:3px
+}
+.itv-icon{
+  width:36px;
+  height:24px;
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+.footer{
+  max-width:1200px;
+  margin:25px auto 12px;
+  border-top:1px solid var(--border);
+  padding-top:8px;
+  display:flex;
+  justify-content:space-between;
+  font-size:12px
+}
+@media(max-width:900px){
+  .wrapper{grid-template-columns:1fr}
+  .prace-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>SEJM RP · X kadencja</div>
+  <div>
+    <a href="#">Kancelaria Sejmu</a>
+    <a href="#">Publikacje</a>
+    <a href="#">Prawo</a>
+    <a href="#">ISAP</a>
+    <button onclick="toggle()">☾</button>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="#">Strona główna</a>
+  <a href="#">Prace Sejmu</a>
+  <a href="#">Posłowie</a>
+  <a href="#">Dla mediów</a>
+  <a href="#">O Sejmie</a>
+  <a href="#">Archiwum</a>
+</div>
+
+<div class="wrapper">
+
+  <div class="box hero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Sejm_RP.jpg">
+    <h1>Komunikat</h1>
+    <p>Wnioski o akredytacje prasowe na rok 2026</p>
+  </div>
+
+  <div class="box">
+    <div class="title">Prace bieżące</div>
+    <div class="prace-grid">
+      <div class="prace">
+        <a href="#">49. posiedzenie Sejmu</a>
+        <a href="#">porządek obrad</a>
+        <a href="#">harmonogram obrad</a>
+        <a href="#">informacje bieżące i pytania</a>
+        <a href="#">głosowania</a>
+        <a href="#">Ustawy rozpatrzone</a>
+        <a href="#">Uchwały podjęte</a>
+        <a href="#">Sprawozdania stenograficzne</a>
+        <a href="#">Prace w komisjach</a>
+        <a href="#">Planowane posiedzenia</a>
+        <a href="#"><strong>Zgromadzenie Narodowe »</strong></a>
+      </div>
+      <div>
+        <div class="calendar">
+          <div class="calendar-header">
+            <button onclick="chg(-1)">‹</button>
+            <strong id="m"></strong>
+            <button onclick="chg(1)">›</button>
+          </div>
+          <table id="cal"></table>
+        </div>
+        <div class="itv">
+          <strong>ITV Sejm</strong>
+          <div class="itv-icons">
+            <div class="itv-icon">LIVE</div>
+            <div class="itv-icon">VOD</div>
+            <div class="itv-icon">📡</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="title">Aktualności</div>
+    <div class="news">
+      <a href="#">08.01.2026 – Konferencja prasowa Marszałka Sejmu</a>
+      <a href="#">08.01.2026 – Wystawa Ignacego Daszyńskiego</a>
+      <a href="#">31.12.2025 – Podsumowanie prac Sejmu 2025</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div>Mapa strony · Kontakt · Dostępność</div>
+  <div>System Informacyjny Sejmu</div>
+</div>
+
+<script>
+let d=new Date();
+const cal=document.getElementById("cal");
+const m=document.getElementById("m");
+
+function draw(){
+  cal.innerHTML="";
+  m.textContent=d.toLocaleString("pl",{month:"long",year:"numeric"});
+  const y=d.getFullYear(), mo=d.getMonth();
+  const f=new Date(y,mo,1).getDay()||7;
+  const days=new Date(y,mo+1,0).getDate();
+
+  let r=cal.insertRow();
+  ["P","W","Ś","C","P","S","N"].forEach(x=>{let c=r.insertCell();c.innerHTML="<b>"+x+"</b>"});
+  r=cal.insertRow();
+  for(let i=1;i<f;i++)r.insertCell();
+
+  for(let i=1;i<=days;i++){
+    if(r.cells.length==7)r=cal.insertRow();
+    let c=r.insertCell();c.textContent=i;
+    let t=new Date();
+    if(i==t.getDate()&&mo==t.getMonth()&&y==t.getFullYear())c.className="today";
+  }
+}
+function chg(v){d.setMonth(d.getMonth()+v);draw()}
+function toggle(){document.body.classList.toggle("dark")}
+draw();
+</script>
+
+</body>
+</html>
